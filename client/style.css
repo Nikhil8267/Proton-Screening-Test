@@ -1,0 +1,52 @@
+body {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#dark-mode-toggle {
+  background: grey;
+  color: rgb(21, 23, 23);
+  height: 100px;
+  width: 150px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#dark-mode-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 1s ease;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+#dark-mode-toggle:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#dark-mode-toggle:active {
+  transform: scale(0.95);
+}
+
+#dark-mode-toggle span {
+  position: relative;
+  z-index: 1;
+}
